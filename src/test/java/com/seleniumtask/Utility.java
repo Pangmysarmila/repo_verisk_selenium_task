@@ -42,6 +42,7 @@ public class Utility {
             default:
                 throw new IllegalArgumentException("Invalid locator type: " + locatorType);
         }
+
         Duration duration = Duration.ofSeconds(3);
         if(clickable){
             element = new WebDriverWait(driver, duration)

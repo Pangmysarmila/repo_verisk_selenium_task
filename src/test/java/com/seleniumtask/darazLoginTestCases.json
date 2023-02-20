@@ -1,0 +1,12 @@
+{
+  "testData": [
+    {"username": "","password": "","description":"Login test with empty username and empty password"},
+    {"username": "username","password": "","description":"Login test with correct username and empty password"},
+    {"username": "username","password": "invalid_password","description":"Login test with correct username and invalid password"},
+    {"username": "","password": "password","description":"Login test with empty username and correct password"},
+    {"username": "invalid_username","password": "password","description":"Login test with invalid username and correct password"},
+    {"username": "username","password": "' or 1=1--+","description":"Login test with SQL Injection in password:: Select user from users where username=’username’ and password=’’ or 1=1’ "},
+    {"username": "username","password": "' or '1'='1","description":"Login test with SQL Injection in password:: Select user from users where username=’username’ and password='' or '1'='1' "},
+    {"username": "\" or \"\"=\"","password": "\" or \"\"=\"","description":"Login test with SQL Injection in username and password:: SELECT * FROM Users WHERE Name =\"\" or \"\"=\"\" AND Pass =\"\" or \"\"=\"\" "}
+  ]
+}

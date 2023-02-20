@@ -189,8 +189,8 @@ public class MacysAutomateTest {
         }
         catch (Exception e){
             System.out.println("Error in MacysAutomateTest>>macyTestCases: "+e);
-            handleFailedCase("Test Failed. Error Occurred:: "+e,"error");
             Thread.sleep(1000);
+            handleFailedCase("Test Failed. Error Occurred:: "+e,"error");
         }
     }
 
@@ -212,8 +212,7 @@ public class MacysAutomateTest {
 
     public void handlePassCase(String message,String imgName){
         try {
-            macyTest.pass(message)
-                    .pass(MediaEntityBuilder.createScreenCaptureFromPath(Utility.takeScreenshot(driver,imgName)).build());
+            macyTest.pass(message, MediaEntityBuilder.createScreenCaptureFromPath(Utility.takeScreenshot(driver,imgName)).build());
         }catch (Exception e){
             System.out.println("Error in handlePassCase: "+e);
         }
@@ -221,8 +220,7 @@ public class MacysAutomateTest {
 
     public void handleFailedCase(String message,String imgName){
         try {
-            macyTest.fail(message)
-                    .fail(MediaEntityBuilder.createScreenCaptureFromPath(Utility.takeScreenshot(driver,imgName)).build());
+            macyTest.fail(message, MediaEntityBuilder.createScreenCaptureFromPath(Utility.takeScreenshot(driver,imgName)).build());
         }catch (Exception e){
             System.out.println("Error in handleFailedCase:: "+e);
         }
